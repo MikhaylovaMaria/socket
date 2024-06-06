@@ -1,6 +1,6 @@
 const io = require("socket.io")(8800, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://pets-one-eta.vercel.app/",
   },
 });
 
@@ -28,7 +28,7 @@ io.on("connection", (socket) => {
     // console.log("Data", data);
     if (user) {
       io.to(user.socketId).emit("receive-message", data);
-    //   console.log("fkkfk");
+      //   console.log("fkkfk");
     }
   });
 
